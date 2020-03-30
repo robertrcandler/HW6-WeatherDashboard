@@ -14,17 +14,40 @@ header {
     padding: 10px;
   }
 
-  .card {
-      background-color: transparent;
-  }
+.col-md-3 {
+    background-color: lightgray;
+    padding: 15px;
+}
 
-  .table {
-      border: 1px solid gray;
-      border-radius: 15px;
-      background-color: white;
-  }
+input {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
 
-  tr {
-      padding: 5px;
-      border-top: 1px solid gray;
-  }
+button {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#Austin {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#Austin, #Chicago, #NewYork, #Orlando, #SanFransisco, #Seattle, #Denver, #Atlanta {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid darkgray;
+    width: 200px;
+}
+
+#Atlanta {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
