@@ -16,10 +16,6 @@ $(document).ready(function () {
         var forecastURL = forecastAPIURL + cityname + "&appid" + APIKey;
     }
 
-
-//add function use to click later
-// APIuse();
-
 var today = new Date();
 // data of today
 $.ajax({
@@ -54,7 +50,6 @@ $.ajax({
 }).then(function(response) {
     //uvIndex
     var uvIndex = response.value;
-
     //append variable
     $("#uvindex").html("<p>UV Index: " + uvIndex + "</p>");
 });
@@ -73,6 +68,16 @@ $.ajax({
         var daytemp = fahrenheit(forecastarray[i].main.temp);
         var dayhumid = forecastarray[i].main.humidity;
         //append variables
+        var j=i+1;
+        var jdate = "#" + JSON.stringify(j) + "date";
+        var jicon = "#" + JSON.stringify(j) + "icon";
+        var jtemp = "#" + JSON.stringify(j) + "temp";
+        var jhumid = "#" + JSON.stringify(j) + "humid";
+
+        $(jdate).html("<strong>" + daydate + "</strong>");
+        $(jicon).html("<br>"+dayicon + "<br>");
+        $(jtemp).html("<p>Temperature: " + daytemp + "F</p>");
+        $(jhumid).html("<p>Hunidity: " + dayhumid + "%</p>");
     }
 });
 
