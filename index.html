@@ -15,47 +15,74 @@
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="column-33">
                     <!--city search-->
-                    <div class="row">
-                        <strong>Search for a City:</strong>
-                    </div>
-                    <div class="row">
-                        <div class="search-container">
-                            <!--put in city search function here-->
-                            <form>
-                              <input type="text" placeholder="Search.." name="search">
-                              <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
+                    <strong>Search for a City:</strong><br>
+                    <div class="search-container">
+                        <!--put in city search function here-->
+                        <form>
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
+                        </form>
                     </div>
                     <!--Add links to make cities clickable-->
-                    <div class="row" id="Austin">Austin</div>
-                    <div class="row" id="Chicago"> Chicago</div>
-                    <div class="row" id="NewYork">New York</div>
-                    <div class="row" id="Orlando">Orlando</div>
-                    <div class="row" id="SanFransisco">San Fransisco</div>
-                    <div class="row" id="Seattle">Seattle</div>
-                    <div class="row" id="Denver">Denver</div>
-                    <div class="row" id="Atlanta">Atlanta</div>
+                    <button class="row" id="city1">Austin</button>
+                    <button id="city2"> Chicago</button>
+                    <button class="row" id="city3">New York</button>
+                    <button class="row" id="city4">Orlando</button>
+                    <button class="row" id="city5">San Fransisco</button>
+                    <button class="row" id="city6">Seattle</button>
+                    <button class="row" id="city7">Denver</button>
+                    <button class="row" id="city8">Atlanta</button>
                 </div>
 
-                <div class="col-md-9">
+                <div class="column-66">
                     <!--weather display-->
-                    <div class="row">
+                    <div class="row" id="day0">
                         <!--Current day weather-->
+                        <h2>
+                           Atlanta (3/31/2020) cloud 
+                        </h2>
+                        <p>Temperature: 90.9F</p>
+                        <p>Humidity: 41%</p>
+                        <p>Wind speed: 4.7 MPH</p>
+                        <p>UV Index: </p>
                     </div>
                     <div class="row">
                         <h3>5-Day Forecast</h3>
                     </div>
-                    <div class="row">
-                        <!--5 day forecast-->
-                        <div class="col-sm"></div>
-                        <div class="col-sm"></div>
-                        <div class="col-sm"></div>
-                        <div class="col-sm"></div>
-                        <div class="col-sm"></div>
-                    </div>
+                    <div class="row" id="future">
+                        <div class="column" id="day1">
+                            <p><strong>5/16/2019</strong></p>
+                            <p>sun</p>
+                            <p>Temperature: 90.9F</p>
+                            <p>Humidity: 41%</p>
+                        </div>
+                        <div class="column" id="day2">
+                            <p><strong>5/16/2019</strong></p>
+                            <p>sun</p>
+                            <p>Temperature: 90.9F</p>
+                            <p>Humidity: 41%</p>
+                        </div>
+                        <div class="column" id="day3">
+                            <p><strong>5/16/2019</strong></p>
+                            <p>sun</p>
+                            <p>Temperature: 90.9F</p>
+                            <p>Humidity: 41%</p>
+                        </div>
+                        <div class="column" id="day4">
+                            <p><strong>5/16/2019</strong></p>
+                            <p>sun</p>
+                            <p>Temperature: 90.9F</p>
+                            <p>Humidity: 41%</p>
+                        </div>
+                        <div class="column-count-5" id="day5">
+                            <p><strong>5/16/2019</strong></p>
+                            <p>sun</p>
+                            <p>Temperature: 90.9F</p>
+                            <p>Humidity: 41%</p>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>

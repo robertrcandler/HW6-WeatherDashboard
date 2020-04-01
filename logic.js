@@ -1,9 +1,25 @@
-// This is our API key
+var city1 = document.getElementById(city1);
+var city2 = document.getElementById(city2);
+var city3 = document.getElementById(city3);
+var city4 = document.getElementById(city4);
+var city5 = document.getElementById(city5);
+var city6 = document.getElementById(city6);
+var city7 = document.getElementById(city7);
+var city8 = document.getElementById(city8);
+var city0 = "Austin";
+
+var day0 = document.getElementById(day0);
+var day1 = document.getElementById(day1);
+var day2 = document.getElementById(day2);
+var day3 = document.getElementById(day3);
+var day4 = document.getElementById(day4);
+var day5 = document.getElementById(day5);
+// This is our API key used in class
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 
 // Here we are building the URL we need to query the database
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
-  "q=Bujumbura,Burundi&appid=" + APIKey;
+  "q=" + city0 + ",Burundi&appid=" + APIKey;
 
 // Here we run our AJAX call to the OpenWeatherMap API
 $.ajax({

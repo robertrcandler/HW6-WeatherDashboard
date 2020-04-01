@@ -14,9 +14,13 @@ header {
     padding: 10px;
   }
 
-.col-md-3 {
+.column-33 {
     background-color: lightgray;
     padding: 15px;
+    width: 230px;
+    float: left;
+    height: 100%;
+    margin: 15px;
 }
 
 input {
@@ -26,7 +30,7 @@ input {
     border: 1px solid darkgray;
 }
 
-button {
+#searchbtn {
     background-color: blue;
     color: white;
     border-radius: 5px;
@@ -35,19 +39,49 @@ button {
     padding: 5px;
 }
 
-#Austin {
+#city1 {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-#Austin, #Chicago, #NewYork, #Orlando, #SanFransisco, #Seattle, #Denver, #Atlanta {
+#city1, #city2, #city3, #city4, #city5, #city6, #city7, #city8 {
     background-color: white;
     padding: 10px;
     border: 1px solid darkgray;
-    width: 200px;
+    width: 220px;
+    text-align: left;
 }
 
-#Atlanta {
+#city8 {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.column-66 {
+    float: right;
+    padding: 15px;
+    width: 66%;
+    height: 100%;
+    margin: 15px;
+}
+
+#future {
+    column-count: 5;
+}
+
+#day0 {
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+#day1, #day2, #day3, #day4, #day5 {
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border: 1px solid blue;
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    max-width: 150px;
 }
