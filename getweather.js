@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //THIS DOCUMENT WAS MADE TO ACCESS API AND REPLACE DIVS IN HTML
     //function to convert kelvin to farenheit
     function fahrenheit(k) {
         var rawtempF = (k-273.15)*1.8+32;
@@ -11,9 +12,36 @@ $(document).ready(function () {
         var todayAPIURL = "https://api.openweathermap.org/data/2.5/weather?q=";
         var forecastAPIURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
         var uvAPIURL = "http://api.openweathermap.org/data/2.5/uvi?";
-        var APIKey = "166a433c57516f51dfab1f7edaed8413";
+        var APIKey = "e6abac337ca67955353882fbffaec4c2";
         var todayURL = todayAPIURL + cityname + "&appid" + APIKey;
         var forecastURL = forecastAPIURL + cityname + "&appid" + APIKey;
+        //added in this later as possible fix
+        //FIX 1
+        // var requestT;
+        // requestT = new XMLHttpRequest();
+        // requestT.open('GET', todayURL, true);
+        // requestT.onload = function {
+        //     var Tdata = JSON.parse(this.response);
+        //     console.log(Tdata);
+        //     console.log(cityname);
+        // }
+        // requestT.send();
+        
+        // var requestF;
+        // requestF = new XMLHttpRequest();
+        // requestF.open('GET', todayURL, true);
+        // requestF.onload = function {
+        //     var Fdata = JSON.parse(this.response);
+        //     console.log(Fdata);
+        //     console.log(cityname);
+        // }
+        // requestF.send();
+
+        //FIX 2
+        // xhttp.open("GET", todayURL, true);
+        // xhttp.send();
+        // xhttp.open("GET", "forecastURL", true);
+        // xhttp.send();
     }
 
 var today = new Date();
@@ -28,6 +56,8 @@ $.ajax({
     var lat = response.coord.lat;
     var lon = response.coord.lon;
     var uvURL = uvAPIURL + "appid=" + APIKey + "&lat=" + lat + "&lon" + lon;
+    xhttp.open("GET", uvURL, true);
+    xhttp.send();
     
     //day 0 variables
     var day0date = '(' + (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear() + ')';
