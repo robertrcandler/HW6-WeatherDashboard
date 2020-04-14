@@ -11,10 +11,14 @@ $(document).ready(function () {
     function APIuse(cityname) {
         var todayAPIURL = "https://api.openweathermap.org/data/2.5/weather?q=";
         var forecastAPIURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
-        var uvAPIURL = "http://api.openweathermap.org/data/2.5/uvi?";
-        var APIKey = "e6abac337ca67955353882fbffaec4c2";
-        var todayURL = todayAPIURL + cityname + "&appid" + APIKey;
-        var forecastURL = forecastAPIURL + cityname + "&appid" + APIKey;
+        var uvAPIURL = "http://api.openweathermap.org/data/2.5/uvi?q=";
+        var APIKey = "&appid=e6abac337ca67955353882fbffaec4c2";
+        var todayURL = todayAPIURL + cityname + APIKey;
+        console.log(todayURL);
+        var forecastURL = forecastAPIURL + cityname + APIKey;
+        console.log(forecastURL);
+        var uvURL = uvAPIURL + cityname + APIKey;
+        console.log(uvURL);
         //added in this later as possible fix
         //FIX 1
         // var requestT;
@@ -43,9 +47,11 @@ $(document).ready(function () {
         // xhttp.open("GET", "forecastURL", true);
         // xhttp.send();
     }
-
+APIuse("Austin");
+console.log(APIuse("Austin"));
 var today = new Date();
 // data of today
+console.log(today);
 $.ajax({
   url: todayURL,
   method: "GET"
@@ -55,7 +61,8 @@ $.ajax({
     var country = response.sys.country;
     var lat = response.coord.lat;
     var lon = response.coord.lon;
-    var uvURL = uvAPIURL + "appid=" + APIKey + "&lat=" + lat + "&lon" + lon;
+    uvURL = uvURL + "&lat=" + lat + "&lon" + lon;
+    console.log(uvURL);
     xhttp.open("GET", uvURL, true);
     xhttp.send();
     
