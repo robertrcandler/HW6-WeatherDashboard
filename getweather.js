@@ -6,6 +6,7 @@ $(document).ready(function () {
         var tempF = Math.round((rawtempF + Number.EPSILON) * 10) / 10;
         return tempF
     }
+    // tempF = Math.round((((k-273.15)*1.8+32) + Number.EPSILON) * 10) / 10;
 
     //function to use API
     function APIuse(cityname) {
