@@ -21,11 +21,11 @@ $(document).ready(function () {
         var lon = response.coord.lon;
         uvURL = uvURL + "&lat=" + lat + "&lon=" + lon;
         //search uv api
-        $.ajax({
-          url: uvURL,
-          method: "GET"
-        }).then(function(response) {
-          var UVindex = "<p>UV Index: " + response.value + "</p>";
+        // $.ajax({
+        //   url: uvURL,
+        //   method: "GET"
+        // }).then(function(response) {
+        //   var UVindex = "<p>UV Index: " + response.value + "</p>";
           //get today's date
           var d = new Date();
           var month = d.getMonth() + 1;
@@ -37,8 +37,8 @@ $(document).ready(function () {
           $("#day0temp").html(tempF0);
           $("#day0hunid").html(humid0);
           $("#day0wind").html(wind0);
-          $("#uvindex").html(UVindex);
-        });
+        //   $("#uvindex").html(UVindex);
+        // });
     });
 
     //variables for the rest of the week
