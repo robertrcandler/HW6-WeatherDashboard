@@ -75,24 +75,52 @@ $(document).ready(function () {
     });
     // event.preventDefault;
   }
+  //making a local storage array of cities to fill buttons
+  var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
   //create functional search button
  $(document).ready(function() {
     document.querySelector("#searchbtn").addEventListener("click", function(event) {
+      //get text written in search bar
       var input2 = document.getElementById("searcharea").value;
+      //add searched city to local storage
+      cities.unshift(input2);
+      localStorage.setItem("cities", JSON.stringify(cities));
+      //run weather display function on searched city
       APIuse(input2);
+      //update buttons to include recently searched city
+      setcities();
       event.preventDefault();
     })
   });
+  //retrieve data from local storage
+  var retrieved = localStorage.getItem("cities");
+  var cities2 = JSON.parse(retrieved);
+  APIuse(cities2[0]);
   //create clickable buttons to change the displayed city
   $(document).ready(function() {
-    $('#city1').click(function() {APIuse("Austin")});//city 1-8 are buttons on the side
-    $('#city2').click(function() {APIuse("Chicago")});
-    $('#city3').click(function() {APIuse("New York")});
-    $('#city4').click(function() {APIuse("Orlando")});
-    $('#city5').click(function() {APIuse("San Francisco")});
-    $('#city6').click(function() {APIuse("Seattle")});
-    $('#city7').click(function() {APIuse("Denver")});
-    $('#city8').click(function() {APIuse("Atlanta")});
+    function setcities() {
+    //append city names to buttons
+    $('#city1').html(cities2[0]);
+    $('#city2').html(cities2[1]);
+    $('#city3').html(cities2[2]);
+    $('#city4').html(cities2[3]);
+    $('#city5').html(cities2[4]);
+    $('#city6').html(cities2[5]);
+    $('#city7').html(cities2[6]);
+    $('#city8').html(cities2[7]);
+    //make buttons functional to local storage
+    $('#city1').click(function() {APIuse(cities2[0])});//city 1-8 are buttons on the side
+    $('#city2').click(function() {APIuse(cities2[1])});
+    $('#city3').click(function() {APIuse(cities2[2])});
+    $('#city4').click(function() {APIuse(cities2[3])});
+    $('#city5').click(function() {APIuse(cities2[4])});
+    $('#city6').click(function() {APIuse(cities2[5])});
+    $('#city7').click(function() {APIuse(cities2[6])});
+    $('#city8').click(function() {APIuse(cities2[07])});
+    }
+    setcities();
   });
 });
+
+//all that is left to do is filter through if city exists or not, make error message, and not add to local storage
 
