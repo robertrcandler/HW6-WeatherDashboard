@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+  
   function APIuse(cityname) {
     var todayURL = "https://api.openweathermap.org/data/2.5/weather?appid=e6abac337ca67955353882fbffaec4c2&q=" + cityname;
     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?appid=e6abac337ca67955353882fbffaec4c2&q=" + cityname;
@@ -72,15 +73,17 @@ $(document).ready(function () {
     }
 
     });
+    event.preventDefault;
   }
-  APIuse("Austin");
   //create functional search button
-  $(document).ready(function() {
-    $('#searchbtn').click(function() {
-      var input = $("#searcharea").val();
-        APIuse(input);
-    });
-  });
+  // $(document).ready(function() {
+    
+  //   $('#searchbtn').click(function() {
+  //     var input = $("#searcharea").val();
+  //       APIuse(input);
+        
+  //   });
+  // });
   //create clickable buttons to change the displayed city
   $(document).ready(function() {
     $('#city1').click(function() {APIuse("Austin")});
@@ -91,6 +94,7 @@ $(document).ready(function () {
     $('#city6').click(function() {APIuse("Seattle")});
     $('#city7').click(function() {APIuse("Denver")});
     $('#city8').click(function() {APIuse("Atlanta")});
+    $('#searchbtn').click(function() {APIuse("Las Vegas")});
   });
 });
 
