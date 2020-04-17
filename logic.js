@@ -3,6 +3,7 @@ $(document).ready(function () {
   //global variable
     //making a local storage array of cities to fill buttons
     var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
+    localStorage.setItem("cities", JSON.stringify(cities));
   
   function APIuse(cityname) {
     var todayURL = "https://api.openweathermap.org/data/2.5/weather?appid=e6abac337ca67955353882fbffaec4c2&q=" + cityname;
@@ -78,8 +79,7 @@ $(document).ready(function () {
     });
     // event.preventDefault;
   }
-  //making a local storage array of cities to fill buttons
-  var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
+
   //create functional search button
  $(document).ready(function() {
     document.querySelector("#searchbtn").addEventListener("click", function(event) {
