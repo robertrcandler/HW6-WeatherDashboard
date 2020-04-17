@@ -1,5 +1,8 @@
 
 $(document).ready(function () {
+  //global variable
+    //making a local storage array of cities to fill buttons
+    var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
   
   function APIuse(cityname) {
     var todayURL = "https://api.openweathermap.org/data/2.5/weather?appid=e6abac337ca67955353882fbffaec4c2&q=" + cityname;
