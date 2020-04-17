@@ -98,7 +98,7 @@ $(document).ready(function () {
   //retrieve data from local storage
   var retrieved = localStorage.getItem("cities");
   var cities2 = JSON.parse(retrieved);
-  APIuse(cities2[0]);
+  APIuse(cities[0]);
   //create clickable buttons to change the displayed city
   $(document).ready(function() {
     function setcities() {
