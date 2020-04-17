@@ -73,20 +73,19 @@ $(document).ready(function () {
     }
 
     });
-    event.preventDefault;
+    // event.preventDefault;
   }
   //create functional search button
-  // $(document).ready(function() {
-    
-  //   $('#searchbtn').click(function() {
-  //     var input = $("#searcharea").val();
-  //       APIuse(input);
-        
-  //   });
-  // });
+ $(document).ready(function() {
+    document.querySelector("#searchbtn").addEventListener("click", function(event) {
+      var input2 = document.getElementById("searcharea").value;
+      APIuse(input2);
+      event.preventDefault();
+    })
+  });
   //create clickable buttons to change the displayed city
   $(document).ready(function() {
-    $('#city1').click(function() {APIuse("Austin")});
+    $('#city1').click(function() {APIuse("Austin")});//city 1-8 are buttons on the side
     $('#city2').click(function() {APIuse("Chicago")});
     $('#city3').click(function() {APIuse("New York")});
     $('#city4').click(function() {APIuse("Orlando")});
@@ -94,7 +93,6 @@ $(document).ready(function () {
     $('#city6').click(function() {APIuse("Seattle")});
     $('#city7').click(function() {APIuse("Denver")});
     $('#city8').click(function() {APIuse("Atlanta")});
-    $('#searchbtn').click(function() {APIuse("Las Vegas")});
   });
 });
 
