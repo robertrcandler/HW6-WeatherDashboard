@@ -81,38 +81,32 @@ $(document).ready(function () {
 
 
 
-
-
-
-
   //making a local storage array of cities to fill buttons
-  var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
-  
+  var cities = '["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"]';
+
   //check if array exists already
   if (localStorage.getItem("cities") === null) {
-    localStorage.setItem("cities", JSON.stringify(cities));
+    localStorage.setItem("cities", cities);
   }
   console.log(localStorage.getItem("cities"));
-  var retrieved = localStorage.getItem("cities");
-  var cities2 = JSON.parse(retrieved);
-  console.log(cities2);
-  //create functional search button
- $(document).ready(function() {
+  var local = localStorage.getItem("cities");
+  var cities2 = JSON.parse(local);
+
+
+
+  $(document).ready(function() {
     document.querySelector("#searchbtn").addEventListener("click", function(event) {
-      //get text written in search bar
       var input2 = document.getElementById("searcharea").value;
-      //add searched city to local storage
-      cities2.unshift(input2);
-      localStorage.setItem("cities", JSON.stringify(cities2));
-      //run weather display function on searched city
       APIuse(input2);
-      //update buttons to include recently searched city
-      setcities();
+      console.log(input2);
+      cities2.unshift(input2);
+      console.log(cities2);
+      localStorage.setItem("cities",JSON.stringify(cities2));
+      console.log(localStorage.getItem("cities"));
       event.preventDefault();
+      
     })
   });
-  //retrieve data from local storage
-
   //create clickable buttons to change the displayed city
   $(document).ready(function() {
     function setcities() {

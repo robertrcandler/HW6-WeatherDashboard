@@ -1,0 +1,54 @@
+
+  //making a local storage array of cities to fill buttons
+  var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
+  
+  //check if array exists already
+  if (localStorage.getItem("cities") === null) {
+    localStorage.setItem("cities", JSON.stringify(cities));
+  }
+  console.log(localStorage.getItem("cities"));
+  var retrieved = localStorage.getItem("cities");
+  var cities2 = JSON.parse(retrieved);
+  console.log(cities2);
+  //create functional search button
+ $(document).ready(function() {
+    document.querySelector("#searchbtn").addEventListener("click", function(event) {
+      //get text written in search bar
+      var input2 = document.getElementById("searcharea").value;
+      //add searched city to local storage
+      cities2.unshift(input2);
+      localStorage.setItem("cities", JSON.stringify(cities2));
+      //run weather display function on searched city
+      APIuse(input2);
+      //update buttons to include recently searched city
+      setcities();
+      event.preventDefault();
+    })
+  });
+  //retrieve data from local storage
+
+  //create clickable buttons to change the displayed city
+  $(document).ready(function() {
+    function setcities() {
+    //append city names to buttons
+    $('#city1').html(cities2[0]);
+    $('#city2').html(cities2[1]);
+    $('#city3').html(cities2[2]);
+    $('#city4').html(cities2[3]);
+    $('#city5').html(cities2[4]);
+    $('#city6').html(cities2[5]);
+    $('#city7').html(cities2[6]);
+    $('#city8').html(cities2[7]);
+    //make buttons functional to local storage
+    $('#city1').click(function() {APIuse(cities2[0])});//city 1-8 are buttons on the side
+    $('#city2').click(function() {APIuse(cities2[1])});
+    $('#city3').click(function() {APIuse(cities2[2])});
+    $('#city4').click(function() {APIuse(cities2[3])});
+    $('#city5').click(function() {APIuse(cities2[4])});
+    $('#city6').click(function() {APIuse(cities2[5])});
+    $('#city7').click(function() {APIuse(cities2[6])});
+    $('#city8').click(function() {APIuse(cities2[07])});
+    }
+    setcities();
+  });
+});
