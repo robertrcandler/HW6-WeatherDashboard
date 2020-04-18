@@ -1,10 +1,6 @@
 
 $(document).ready(function () {
-  //global variable
-    //making a local storage array of cities to fill buttons
-    var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
-    localStorage.setItem("cities", JSON.stringify(cities));
-  
+    
   function APIuse(cityname) {
     var todayURL = "https://api.openweathermap.org/data/2.5/weather?appid=e6abac337ca67955353882fbffaec4c2&q=" + cityname;
     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?appid=e6abac337ca67955353882fbffaec4c2&q=" + cityname;
@@ -77,17 +73,37 @@ $(document).ready(function () {
     }
 
     });
-    // event.preventDefault;
   }
 
+
+
+
+
+
+
+
+
+
+
+  //making a local storage array of cities to fill buttons
+  var cities = ["Austin","Chicago","New York","Orlando","San Francisco","Seattle","Denver","Atlanta"];
+  
+  //check if array exists already
+  if (localStorage.getItem("cities") === null) {
+    localStorage.setItem("cities", JSON.stringify(cities));
+  }
+  console.log(localStorage.getItem("cities"));
+  var retrieved = localStorage.getItem("cities");
+  var cities2 = JSON.parse(retrieved);
+  console.log(cities2);
   //create functional search button
  $(document).ready(function() {
     document.querySelector("#searchbtn").addEventListener("click", function(event) {
       //get text written in search bar
       var input2 = document.getElementById("searcharea").value;
       //add searched city to local storage
-      cities.unshift(input2);
-      localStorage.setItem("cities", JSON.stringify(cities));
+      cities2.unshift(input2);
+      localStorage.setItem("cities", JSON.stringify(cities2));
       //run weather display function on searched city
       APIuse(input2);
       //update buttons to include recently searched city
@@ -96,9 +112,7 @@ $(document).ready(function () {
     })
   });
   //retrieve data from local storage
-  var retrieved = localStorage.getItem("cities");
-  var cities2 = JSON.parse(retrieved);
-  APIuse(cities[0]);
+
   //create clickable buttons to change the displayed city
   $(document).ready(function() {
     function setcities() {
